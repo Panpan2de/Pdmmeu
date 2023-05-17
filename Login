@@ -14,41 +14,53 @@ class Login extends StatelessWidget {
         children: <Widget> [
           Container(
             padding: EdgeInsets.only(top: 50),
-            height: 300,
-            width: 250,
+            height: 350,
+            width: 300,
             child: Image.asset('assets/jogaki.png.png')
               ),
-               Column(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(top: 150),
-                width: 500,
-                child: TextField(
-                  decoration: InputDecoration(
-                      labelText: 'Email',
-                      enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
+            Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 100, bottom: 50),
+                    width: 500,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          labelText: 'Email',
+                          enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),   
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
                       ),
-                      focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
+                    ),
+                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Container(
+                         width: 500,
+                         child: Center(
+                           child: TextField(
+                            decoration: InputDecoration(
+                              labelText: 'Senha',
+                              enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-               Container(
-                padding: EdgeInsets.only(top: 50),
-                width: 500,
-                 child: TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
+                  Container(
+                   child: TextButton(
+                    onPressed: () {},
+                    child: Text('Esqueceu senha?', textAlign: TextAlign.right,),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
@@ -64,10 +76,16 @@ class Login extends StatelessWidget {
                 textStyle: TextStyle(fontSize: 20),
                   backgroundColor: Colors.red,
                     ),
-                  ),
+                  ),        
                 ),
-              )
-            ],
+              ),
+              Center(
+                child: TextButton(
+                    onPressed: () {},
+                    child: Text('Não possui conta? Cadastre-se',),
+                ),
+              ),
+            ]
           ),
         ),
       ),
