@@ -1,0 +1,97 @@
+import 'package:flutter/material.dart';
+
+class Cadastrar extends StatelessWidget {
+  Cadastrar({super.key});
+
+  @override
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+      body: Container(
+      child: ListView( 
+        children: <Widget> [
+          Container(
+            padding: EdgeInsets.only(top: 50),
+            height: 300,
+            width: 250,
+            child: Image.asset('assets/jogaki.png.png')
+              ),
+               Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.only(top: 150),
+                width: 500,
+                child: TextField(
+                  decoration: InputDecoration(
+                      labelText: 'Email',
+                      enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                  ),
+                ),
+              Container(
+                padding: EdgeInsets.only(top: 50),
+                width: 500,
+                 child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Senha',
+                      enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 50),
+                width: 500,
+                 child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Confirmar Senha',
+                      enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Center(
+            child: Container(
+              padding: EdgeInsets.only(top: 100),
+              width: 150,
+              height: 150,
+              child: ElevatedButton(
+              child: Text('Casdastrar'),
+               onPressed: () { },
+              style: ElevatedButton.styleFrom(
+                textStyle: TextStyle(fontSize: 20),
+                  backgroundColor: Colors.red,
+                    ),
+                  ),
+                ),
+              ),
+              Center(
+                child: TextButton(
+                    onPressed: () {},
+                    child: Text('Possui conta? Faça login',),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
