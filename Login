@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:login/cadastro.dart';
 
 class Login extends StatelessWidget {
-  Login({super.key});
+  const Login({super.key});
 
   @override
 
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          subtitle1: TextStyle(color: Colors.black),
+        ),
+      inputDecorationTheme: const InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.white,
+        labelStyle: TextStyle(color: Colors.black),
+        )
+      ),
       home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 42, 42, 50),
       body: Container(
       child: ListView( 
         children: <Widget> [
@@ -16,7 +28,7 @@ class Login extends StatelessWidget {
             padding: EdgeInsets.only(top: 50),
             height: 350,
             width: 300,
-            child: Image.asset('assets/jogaki.png.png')
+            child: Image.asset('assets/jogaki.png')
               ),
             Column(
                 children: [
@@ -25,7 +37,7 @@ class Login extends StatelessWidget {
                     width: 500,
                     child: TextField(
                       decoration: InputDecoration(
-                          labelText: 'Email',
+                          hintText: 'E-mail',
                           enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),   
                           ),
@@ -42,8 +54,9 @@ class Login extends StatelessWidget {
                          width: 500,
                          child: Center(
                            child: TextField(
+                            obscureText: true,
                             decoration: InputDecoration(
-                              labelText: 'Senha',
+                              hintText: 'Senha',
                               enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               ),
@@ -81,8 +94,12 @@ class Login extends StatelessWidget {
               ),
               Center(
                 child: TextButton(
-                    onPressed: () {},
-                    child: Text('Não possui conta? Cadastre-se',),
+                  child: Text('Não possui conta? Cadastre-se',),
+                  onPressed: () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) {return Cadastrar();}),
+                    );
+                  },
                 ),
               ),
             ]
