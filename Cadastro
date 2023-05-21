@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/login.dart';
 
 class Cadastrar extends StatelessWidget {
   Cadastrar({super.key});
@@ -8,24 +9,35 @@ class Cadastrar extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          subtitle1: TextStyle(color: Colors.black),
+        ),
+      inputDecorationTheme: const InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.white,
+        labelStyle: TextStyle(color: Colors.black),
+        )
+      ),
       home: Scaffold(
+      backgroundColor: const Color.fromARGB(255, 42, 42, 50),
       body: Container(
       child: ListView( 
         children: <Widget> [
           Container(
-            padding: EdgeInsets.only(top: 50),
+            padding: const EdgeInsets.only(top: 50),
             height: 300,
             width: 250,
-            child: Image.asset('assets/jogaki.png.png')
+            child: Image.asset('assets/jogaki.png')
               ),
                Column(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.only(top: 150),
+                padding: const EdgeInsets.only(top: 150),
                 width: 500,
                 child: TextField(
                   decoration: InputDecoration(
-                      labelText: 'Email',
+                      hintText: 'E-mail',
                       enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                       ),
@@ -36,11 +48,12 @@ class Cadastrar extends StatelessWidget {
                   ),
                 ),
               Container(
-                padding: EdgeInsets.only(top: 50),
+                padding: const EdgeInsets.only(top: 50),
                 width: 500,
                  child: TextField(
+                  obscureText: true,
                     decoration: InputDecoration(
-                      labelText: 'Senha',
+                      hintText: 'Senha',
                       enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                       ),
@@ -51,11 +64,12 @@ class Cadastrar extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(top: 50),
+                padding: const EdgeInsets.only(top: 50),
                 width: 500,
                  child: TextField(
+                  obscureText: true,
                     decoration: InputDecoration(
-                      labelText: 'Confirmar Senha',
+                      hintText: 'Confirmar Senha',
                       enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                       ),
@@ -69,14 +83,14 @@ class Cadastrar extends StatelessWidget {
           ),
           Center(
             child: Container(
-              padding: EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 100),
               width: 150,
               height: 150,
               child: ElevatedButton(
-              child: Text('Casdastrar'),
+              child: const Text('Casdastrar'),
                onPressed: () { },
               style: ElevatedButton.styleFrom(
-                textStyle: TextStyle(fontSize: 20),
+                textStyle: const TextStyle(fontSize: 20),
                   backgroundColor: Colors.red,
                     ),
                   ),
@@ -85,7 +99,7 @@ class Cadastrar extends StatelessWidget {
               Center(
                 child: TextButton(
                     onPressed: () {},
-                    child: Text('Possui conta? Faça login',),
+                    child: const Text('Possui conta? Faça login',),
                 ),
               ),
             ],
